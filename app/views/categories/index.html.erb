@@ -1,8 +1,9 @@
-<h1>Categories</h1>
-<h3>Log In: <%= @user.name %></h3>
+<div class="d-flex justify-content-between">
+  <h1>Categories</h1>
 
-<div class="p-3">
-  <%= link_to "Add Category", new_category_path, class: "btn btn-primary" %>
+  <div class="p-3">
+    <%= link_to "Add Category", new_category_path, class: "btn btn-primary" %>
+  </div>
 </div>
 
 <% @categories.each do |cat| %>
