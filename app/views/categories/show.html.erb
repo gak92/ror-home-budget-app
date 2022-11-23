@@ -10,9 +10,16 @@
   </div>
 </div>
 
-<div class="p-3">
-  <%= link_to "Add New Transaction", new_category_payment_path(@category.id), class: "btn btn-primary"	 %>
+<div class="d-flex flex-row justify-content-between p-3">
+  <div>
+    <%= link_to "Back", categories_path, class: "btn btn-secondary"	%>
+  </div>
+
+  <div>
+    <%= link_to "Add New Transaction", new_category_payment_path(@category.id), class: "btn btn-primary"	 %>
+  </div>
 </div>
+
 
 <ul class="list-group">
   <li class="list-group-item d-flex flex-row justify-content-between active" aria-current="true">
