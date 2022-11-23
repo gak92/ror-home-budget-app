@@ -23,11 +23,10 @@ class CategoriesController < ApplicationController
 
     redirect_to categories_path
   end
-  
+
   private
 
   def category_params
     params.require(:categories).permit(:name, :icon, :author_id)
   end
-
 end

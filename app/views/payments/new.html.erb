@@ -1,7 +1,5 @@
 <div>
   <h1 class="mt-5 mb-5">Add New Transaction</h1>
-  <%# Params: <%= @params %>% %>
-  <%# <%=  @category.author.name %> %>
 
   <%= form_with model: @payment, url: category_payments_path, method: :post, data: { turbo: false }, local: true, class: "form" do |f| %>
 
