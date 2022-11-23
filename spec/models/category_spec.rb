@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Category, type: :model do
   before :each do
-    @new_user = User.new(name: 'testing', email: 'testing@test.com', password: 1234567, password_confirmation: 1234567)
+    @new_user = User.new(name: 'testing', email: 'testing@test.com', password: 1_234_567,
+                         password_confirmation: 1_234_567)
     @new_user.save
     @new_category = Category.new(name: 'Grocery', icon: 'https://grocery.com/grocery.jpg', author_id: @new_user.id)
   end

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  new_user = User.new(name: 'testing', email: 'testing@test.com', password: 1234567, password_confirmation: 1234567)
+  new_user = User.new(name: 'testing', email: 'testing@test.com', password: 1_234_567, password_confirmation: 1_234_567)
   subject { new_user }
 
   before { subject.save }
@@ -18,7 +18,7 @@ RSpec.describe User, type: :model do
     subject.name = nil
     expect(subject).to_not be_valid
   end
-  
+
   it 'Subject should not validate if email not present' do
     subject.email = nil
     expect(subject).to_not be_valid
