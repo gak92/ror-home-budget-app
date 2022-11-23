@@ -1,2 +1,25 @@
 <h1>Categories</h1>
-<h3>Log In User: <%= @user.name %></h3>
+<h3>Log In: <%= @user.name %></h3>
+
+<div class="p-3">
+  <%= link_to "Add Category", new_category_path, class: "btn btn-primary" %>
+</div>
+
+<% @categories.each do |cat| %>
+  <div class="card p-3 mb-2 d-flex flex-row align-items-center">
+    
+    <div class="p-2">
+      <%= image_tag cat.icon, height: 150 %>
+    </div>
+
+    <div class="p-2">
+      <div class="card-heading">
+        <h3> <%= link_to cat.name, category_path(cat.id), class: "card-title stretched-link" %> </h3>
+      </div>
+      <div class="card-body">
+        Create at: <%= cat.created_at%>
+      </div>
+    </div>
+
+  </div>
+<% end %>
