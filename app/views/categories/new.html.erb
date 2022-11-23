@@ -1,0 +1,21 @@
+<div>
+  <h1>Add New Category</h1>
+
+  <%= form_with model: @category, class: "form", scope: :categories do |f| %>
+
+    <div class="mb-3">
+      <%= f.label :Category_Name, class: "form-label" %>
+      <%= f.text_field :name, placeholder: "Add Name of Category", required: true, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :Icon, class: "form-label"  %>
+      <%= f.text_field :icon, placeholder: "Link of Icon", required: true, class: "form-control" %>
+    <div>
+
+    <div class="my-3">
+      <%= f.submit "Add Category", class: "btn btn-primary" %>
+    </div>
+    
+  <% end %>
+</div>
