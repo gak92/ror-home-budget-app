@@ -16,7 +16,6 @@ class CategoriesController < ApplicationController
     @new_category = current_user.categories.new(category_params)
 
     render :new unless @new_category.save
-
     redirect_to categories_path
   end
 

@@ -11,7 +11,12 @@
     <div class="mb-3">
       <%= f.label :Amount, class: "form-label"  %>
       <%= f.number_field :amount, step: :any, placeholder: "Amount of Transaction", required: true, class: "form-control" %>
-    <div>
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :category_id, "Select Category", class: "form-label" %>
+      <%= f.select :category_id, @categories.pluck(:name, :id), {:selected => @category.id}, class: "form-select" %>
+    </div>
 
     <div class="mt-5">
       <%= f.submit "Add Transaction", class: "btn btn-primary" %>
