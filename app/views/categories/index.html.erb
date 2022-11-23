@@ -1,30 +1,34 @@
-<div class="d-flex justify-content-between">
-  <h1>Categories</h1>
+<% if user_signed_in? %>
+  <div class="d-flex justify-content-between">
+    <h1>Categories</h1>
 
-  <div class="p-3">
-    <%= link_to "Add Category", new_category_path, class: "btn btn-primary" %>
-  </div>
-</div>
-
-<% @categories.each do |cat| %>
-  <div class="card p-3 mb-2 d-flex flex-row align-items-center">
-    
-    <div class="p-2 me-4">
-      <%= image_tag cat.icon, height: 150, width: 150 %>
+    <div class="p-3">
+      <%= link_to "Add Category", new_category_path, class: "btn btn-primary" %>
     </div>
-
-    <div class="p-2">
-      <div class="card-heading">
-        <h3> <%= link_to cat.name, category_path(cat.id), class: "card-title" %> </h3>
-      </div>
-      <div class="card-body">
-        Create at: <%= cat.created_at%>
-      </div>
-      <div class="p-1 d-flex gap-1">
-        <%= link_to "Edit Category", edit_category_path(cat.id), class: "btn btn-info" %>
-        <%= button_to "Delete Category", category_path(cat.id), method: :delete, class: "btn btn-danger" %>
-      </div>
-    </div>
-
   </div>
+
+  <% @categories.each do |cat| %>
+    <div class="card p-3 mb-2 d-flex flex-row align-items-center">
+      
+      <div class="p-2 me-4">
+        <%= image_tag cat.icon, height: 150, width: 150 %>
+      </div>
+
+      <div class="p-2">
+        <div class="card-heading">
+          <h3> <%= link_to cat.name, category_path(cat.id), class: "card-title" %> </h3>
+        </div>
+        <div class="card-body">
+          Create at: <%= cat.created_at%>
+        </div>
+        <div class="p-1 d-flex gap-1">
+          <%= link_to "Edit Category", edit_category_path(cat.id), class: "btn btn-info" %>
+          <%= button_to "Delete Category", category_path(cat.id), method: :delete, class: "btn btn-danger" %>
+        </div>
+      </div>
+
+    </div>
+  <% end %>
+<% else %>
+  <%= render partial: "shared/splash" %>
 <% end %>

@@ -1,5 +1,8 @@
 class CategoriesController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
+
   def index
+    return unless user_signed_in?
     @categories = current_user.categories
   end
 
