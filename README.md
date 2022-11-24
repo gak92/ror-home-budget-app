@@ -5,7 +5,7 @@
 > A mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
 ## Live demo:
-You can check out the live demo [here]().
+You can check out the live demo [here](https://ror-home-budget-app.herokuapp.com/).
 
 
 ## Entity Relationship Diagram
@@ -13,7 +13,7 @@ You can check out the live demo [here]().
 
 ## Made With
 
-- Ruby on Rails
+- Ruby & Ruby on Rails
 - Devise
 - Bootstrap 5
 - Postgresql
@@ -74,3 +74,7 @@ Feel free to check the [issues page](../../issues/).
 ## Show your support
 
 Give a ⭐️ if you like this project!
+
+## :memo: License
+
+This project is [MIT](./MIT.md) licensed.
