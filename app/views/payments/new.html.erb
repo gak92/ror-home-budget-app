@@ -1,0 +1,26 @@
+<div>
+  <h1 class="mt-5 mb-5">Add New Transaction</h1>
+
+  <%= form_with model: @payment, url: category_payments_path, method: :post, data: { turbo: false }, local: true, class: "form" do |f| %>
+
+    <div class="mb-3">
+      <%= f.label :Transaction_Name, class: "form-label" %>
+      <%= f.text_field :name, placeholder: "Add Name of Transaction", required: true, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :Amount, class: "form-label"  %>
+      <%= f.number_field :amount, step: :any, placeholder: "Amount of Transaction", required: true, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :category_id, "Select Category", class: "form-label" %>
+      <%= f.select :category_id, @categories.pluck(:name, :id), {:selected => @category.id}, class: "form-select" %>
+    </div>
+
+    <div class="mt-5">
+      <%= f.submit "Add Transaction", class: "btn btn-primary" %>
+    </div>
+    
+  <% end %>
+</div>
