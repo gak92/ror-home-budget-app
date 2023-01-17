@@ -1,0 +1,19 @@
+# This file showing any options you can use the with nixpacks.toml File that you may need with nixpacks
+
+[phases.setup]
+nixPkgs = ["...", "imagemagick"] # Or add any you need to install with nix
+aptPkgs = ["...", "wget"]   # Installs the wget package with apt-get, could also pick any you want
+
+# Automactilly runs any command when starting up
+[start]
+  cmd = "yarn run start"
+
+# Customize what is being built and how it starts up
+[phases.setup]
+nixPkgs = ['...', 'cowsay']
+
+[phases.build]
+cmds = ['yarn run server:build']
+
+[start]
+cmd = 'yarn run server:start'
