@@ -33,3 +33,4 @@
 node_modules
 
 railway_env_sample.txt
+nixpacks.toml
